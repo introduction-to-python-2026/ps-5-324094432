@@ -2,7 +2,6 @@ def split_before_uppercases(formula):
     start = 0
     end = 1
     elements_lst = []
-    
     if not formula:
         return elements_lst
 
