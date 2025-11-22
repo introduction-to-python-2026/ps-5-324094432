@@ -1,5 +1,5 @@
-# Add the import statements for necessary sympy functions here
 from sympy import symbols, Eq, solve
+
 
 ELEMENTS = [
     'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne',
@@ -46,18 +46,12 @@ def build_equations(reactant_atoms, product_atoms):
 
 
 def my_solve(equations, coefficients):
+    """Solves the system of equations for the coefficients of the reaction.  
+    Example: For equations [2*a0 - 2*b0, a1 - b0], returns [1.0, 1.0]."""
     solution = solve(equations, coefficients)
 
-    # SymPy sometimes returns a list of dicts
-    if isinstance(solution, list):
-        solution = solution[0]
-
-    coefficient_values = []
-    for coefficient in coefficients:
-        coefficient_values.append(float(solution[coefficient]))
-
-    return coefficient_values
-
-
-
-
+    if len(solution) == len(coefficients):
+        coefficient_values = list()
+        for coefficient in coefficients:
+            coefficient_values.append(float(solution[coefficient]))
+        return coefficient_values
