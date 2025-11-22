@@ -16,6 +16,7 @@ ELEMENTS = [
     'Rg', 'Cn', 'Uut', 'Uuq', 'Uup', 'Uuh', 'Uus', 'Uuo'
 ]
 
+
 def generate_equation_for_element(compounds, coefficients, element):
     """Generates a symbolic equation for the given element from compounds and coefficients.  
     Example: For H in reactants [{'H': 2}, {'O': 4, 'H': 1}], coefficients [a0, a1], returns 2*a0 + a1."""
