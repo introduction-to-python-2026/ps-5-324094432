@@ -5,6 +5,7 @@ def split_before_uppercases(formula):
     if not formula:
         return elements_lst
 
+    
     while end < len(formula):
         if formula[end].isupper():
             elements_lst.append(formula[start:end])
